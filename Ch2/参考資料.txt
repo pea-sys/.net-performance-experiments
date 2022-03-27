@@ -1,0 +1,2 @@
+[パフォーマンス ログ収集]
+https://jpwinsup.github.io/blog/2021/06/07/Performance/SystemResource/PerformanceLogging/
