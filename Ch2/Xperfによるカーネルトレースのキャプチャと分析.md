@@ -1,4 +1,4 @@
-### (編集中)Windows Performance AnalyzerによるCLRのGCイベントのトレーシング実験
+### Windows Performance AnalyzerによるCLRのGCイベントのトレーシング実験
 
 1. WPAをインストールします。
   Setupを次のページからダウンロード。  
