@@ -1,0 +1,35 @@
+■CPU
+Intel(R) Core(TM) i3-4000M CPU @ 2.40GHz   2.40 GHz
+
+■対象ステップ
+xor         edx,edx                   // edxレジスタを0で初期化
+mov         dword ptr [ebp-44h],edx　 // 変数xにedxレジスタの値を格納し初期化
+
+int x = a + b; // 91 = 4 + 87
+
+EAX = 00000000 EBX = 0073EEA4 ECX = 00000004 EDX = 00000000 ESI = 00000004 EDI = 0073EDB4 EIP = 04D708DF ESP = 0073ED6C EBP = 0073EDC0 EFL = 00000246 
+CS = 0023 DS = 002B ES = 002B SS = 002B FS = 0053 GS = 002B 
+OV = 0 UP = 0 EI = 1 PL = 0 ZR = 1 AC = 0 PE = 1 CY = 0 
+0x0073ED84 = 00000004 
+
+mov         eax,dword ptr [ebp-3Ch]  // eaxレジスタに ebp -3Chが示すメモリ上の4バイトデータ(変数a)を格納
+
+EAX = 00000004 EBX = 0073EEA4 ECX = 00000004 EDX = 00000000 ESI = 00000004 EDI = 0073EDB4 EIP = 04D708E2 ESP = 0073ED6C EBP = 0073EDC0 EFL = 00000246 
+CS = 0023 DS = 002B ES = 002B SS = 002B FS = 0053 GS = 002B 
+OV = 0 UP = 0 EI = 1 PL = 0 ZR = 1 AC = 0 PE = 1 CY = 0 
+0x0073ED80 = 00000053 
+
+add         eax,dword ptr [ebp-40h]  // eaxレジスタに eaxレジスタとebp-30hが示すメモリ上の4バイト(変数b)の合算値を格納
+
+EAX = 00000057 EBX = 0073EEA4 ECX = 00000004 EDX = 00000000 ESI = 00000004 EDI = 0073EDB4 EIP = 04D708E5 ESP = 0073ED6C EBP = 0073EDC0 EFL = 00000202 
+CS = 0023 DS = 002B ES = 002B SS = 002B FS = 0053 GS = 002B 
+OV = 0 UP = 0 EI = 1 PL = 0 ZR = 0 AC = 0 PE = 0 CY = 0 
+0x0073ED7C = 00000000 
+
+mov         dword ptr [ebp-44h],eax  // ebp-44が示すメモリ上のバイト(変数x)にeaxレジスタの値を格納
+
+EAX = 00000057 EBX = 0073EEA4 ECX = 00000004 EDX = 00000000 ESI = 00000004 EDI = 0073EDB4 EIP = 04D708E8 ESP = 0073ED6C EBP = 0073EDC0 EFL = 00000202 
+CS = 0023 DS = 002B ES = 002B SS = 002B FS = 0053 GS = 002B 
+OV = 0 UP = 0 EI = 1 PL = 0 ZR = 0 AC = 0 PE = 0 CY = 0 
+0x0073ED84 = 00000004 
+

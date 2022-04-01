@@ -1,0 +1,58 @@
+        static int Calculation(int a ,int b)
+        {
+ push        ebp  
+ mov         ebp,esp  
+ push        edi  
+ push        esi  
+ push        ebx  
+ sub         esp,48h  
+ mov         esi,ecx  
+ lea         edi,[ebp-38h]  
+ mov         ecx,0Bh  
+ xor         eax,eax  
+ rep stos    dword ptr es:[edi]  
+ mov         ecx,esi  
+ mov         dword ptr [ebp-3Ch],ecx  
+ mov         dword ptr [ebp-40h],edx  
+ cmp         dword ptr ds:[10642F0h],0  
+ je          SimpleCalculation.Program.Calculation(Int32, Int32)+02Dh (010B08C5h)  
+ call        733C05E0  
+ xor         edx,edx  
+ mov         dword ptr [ebp-50h],edx  
+ xor         edx,edx  
+ mov         dword ptr [ebp-54h],edx  
+ xor         edx,edx  
+ mov         dword ptr [ebp-4Ch],edx  
+ xor         edx,edx  
+ mov         dword ptr [ebp-48h],edx  
+ xor         edx,edx  
+ mov         dword ptr [ebp-44h],edx  
+ nop  
+            int x = a + b;
+ mov         eax,dword ptr [ebp-3Ch]  
+ add         eax,dword ptr [ebp-40h]  
+ mov         dword ptr [ebp-44h],eax  
+            int y = a - b;
+ mov         eax,dword ptr [ebp-3Ch]  
+ sub         eax,dword ptr [ebp-40h]  
+ mov         dword ptr [ebp-48h],eax  
+            int z = b - a;
+ mov         eax,dword ptr [ebp-40h]  
+ sub         eax,dword ptr [ebp-3Ch]  
+ mov         dword ptr [ebp-4Ch],eax  
+            int w = 2 * b + 2 * a;
+ mov         eax,dword ptr [ebp-40h]  
+ add         eax,eax  
+ mov         edx,dword ptr [ebp-3Ch]  
+ add         edx,edx  
+ add         eax,edx  
+ mov         dword ptr [ebp-50h],eax  
+            return x + y + z + w;
+ mov         eax,dword ptr [ebp-44h]  
+ add         eax,dword ptr [ebp-48h]  
+ add         eax,dword ptr [ebp-4Ch]  
+ add         eax,dword ptr [ebp-50h]  
+ mov         dword ptr [ebp-54h],eax  
+ nop  
+ jmp         SimpleCalculation.Program.Calculation(Int32, Int32)+083h (010B091Bh)  
+        }
