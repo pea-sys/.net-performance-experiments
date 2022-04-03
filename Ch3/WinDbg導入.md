@@ -35,7 +35,7 @@ https://docs.microsoft.com/ja-jp/windows-hardware/drivers/debugger/debugger-down
 8. 「.symfix <シンボルパス>」コマンドでシンボルを設定します。  
 ![WinDbg](https://user-images.githubusercontent.com/49807271/161407096-1b8e1c37-d3df-4579-bf48-1d409fc241fb.jpg)
 
-9. 「sympath」コマンドでパスを確認します。  
+9. 「.sympath」コマンドでパスを確認します。  
 ![WinDbg](https://user-images.githubusercontent.com/49807271/161407124-6a5ba9b4-a63f-4245-bba0-af01ed3a9826.jpg)
     
 10. 「.reload」コマンドで、シンボルをデバッガーに読み込みます。
