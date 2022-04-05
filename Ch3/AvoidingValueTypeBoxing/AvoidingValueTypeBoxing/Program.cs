@@ -24,6 +24,9 @@ namespace AvoidingValueTypeBoxing
             int i = 42;
             return i;
         }
+        /// <summary>
+        /// シンプルな値型の構造体
+        /// </summary>
         public struct Point2D_FullBoxing
         {
             public int X;
@@ -43,6 +46,9 @@ namespace AvoidingValueTypeBoxing
                 return X == other.X && Y == other.Y;
             }
         }
+        /// <summary>
+        /// 比較元、比較先のボックス化防止
+        /// </summary>
         public struct Point2D_NoneBoxing
         {
             public int X;
@@ -66,6 +72,9 @@ namespace AvoidingValueTypeBoxing
                 return !(a==b);
             }
         }
+        /// <summary>
+        /// ジェネリックによるボックス化防止
+        /// </summary>
         public struct Point2D_IEquatable : IEquatable<Point2D_IEquatable>
         {
             public int X;
@@ -91,9 +100,10 @@ namespace AvoidingValueTypeBoxing
         }
         /// <summary>
         /// Output
-        /// FullBoxing=660
-        /// HalfBoxing=155
-        /// NoneBoxing=134
+        /// FullBoxing=585
+        /// HalfBoxing=136
+        /// NoneBoxing=126 
+        /// EquatableBoxing=46
         /// </summary>
         static void Main(string[] args)
         {
@@ -154,7 +164,7 @@ namespace AvoidingValueTypeBoxing
             }
             Console.WriteLine($"NoneBoxing={stat_time / count_times}");
 
-            // EQUATABLE
+            // EQUATABLE・・・NONE BOXING版だと実はListのジェネリック実装によってボックス化している
             stat_time = 0;
             List<Point2D_IEquatable> polygon_eq = new List<Point2D_IEquatable>();
             for (int i = 0; i < 10000000; i++)
