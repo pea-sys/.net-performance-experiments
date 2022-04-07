@@ -1,5 +1,7 @@
-### WinDbgによるオブジェクトルート確認(編集中)
+### WinDbgによるオブジェクトルート確認
 
+1. Dumpのロード
+```
 Microsoft (R) Windows Debugger Version 10.0.22000.194 AMD64
 Copyright (c) Microsoft Corporation. All rights reserved.
 
@@ -22,12 +24,27 @@ Loading unloaded module list
 For analysis of this file, run !analyze -v
 ntdll!NtDelayExecution+0x14:
 00007ffc`cdc8d3f4 c3              ret
+```
+2. sosのロード
+
+```
 0:000> .loadby sos clr
+```
+
+3. シンボルパスセット
+```
 0:000> .symfix "C:\SymbolsWinDbg"
+```
+
+4. リロードする
+```
 0:000> .reload
 ............................
 Loading unloaded module list
-.
+```
+
+5. ヒープメモリの中身を見る
+```
 0:000> !DumpHeap -stat
 Statistics:
               MT    Count    TotalSize Class Name
@@ -64,25 +81,9 @@ Statistics:
 00007ffc8b080e30      123         7872 System.EventHandler
 00007ffc8b005e70       10        36472 System.Object[]
 Total 296 objects
-0:000> !DumpHeap -type System.Object[]
-         Address               MT     Size
-00000200155a2ea0 00007ffc8b005e70       40     
-00000200155a2f60 00007ffc8b005e70       56     
-00000200155a30c8 00007ffc8b005e70       88     
-00000200155a3380 00007ffc8b005e70      152     
-00000200155a38d8 00007ffc8b005e70      280     
-00000200155a4388 00007ffc8b005e70      536     
-00000200255a1038 00007ffc8b005e70     9744     
-00000200255a3668 00007ffc8b005e70     1048     
-00000200255a3aa0 00007ffc8b005e70     8184     
-00000200255a5ab8 00007ffc8b005e70    16344     
-
-Statistics:
-              MT    Count    TotalSize Class Name
-00007ffc8b005e70       10        36472 System.Object[]
-Total 10 objects
-0:000> !GCRoot 00007ffc8b005e70
-Found 0 unique roots (run '!GCRoot -all' to see all roots).
+```
+6. System.EventHandlerの情報を得る
+```
 0:000> !DumpHeap -type System.EventHandler
          Address               MT     Size
 00000200155a2df0 00007ffc8b080e30       64     
@@ -213,5 +214,16 @@ Statistics:
               MT    Count    TotalSize Class Name
 00007ffc8b080e30      123         7872 System.EventHandler
 Total 123 objects
-0:000> !GCRoot 00007ffc8b080e30
-Found 0 unique roots (run '!GCRoot -all' to see all roots).
+
+```
+7. 特定のオブジェクトの参照ルートを確認します
+```
+0:000> !GCRoot 00000200155a56d8
+HandleTable:
+    0000020013cc17d8 (pinned handle)
+    -> 00000200255a5ab8 System.Object[]
+    -> 00000200155a56d8 System.EventHandler
+```
+
+8. 同フォルダのGC_StaticRouteプログラムのデバッグをしているので  
+   pinned handleはstatic変数のButtonClickに相当すると考えられる。
