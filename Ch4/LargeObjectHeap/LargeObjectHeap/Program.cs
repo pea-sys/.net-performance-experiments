@@ -17,7 +17,7 @@ namespace LargeObjectHeap
     {
         /// <summary>
         /// 32bitと64bitの差異はあまりない
-        /// ラージオブジェクトオブジェクト作成後から使用メモリ約4700バイトの差異が発生するが、
+        /// ラージオブジェクト作成後から使用メモリ約4700バイトの差異が発生するが、
         /// ラージオブジェクトの圧縮率は一緒
         /// GCがラージオブジェクトを圧縮する条件については「不確定な将来の時刻に発生します」と記載があるのみで詳細は不明
         /// 
@@ -30,7 +30,6 @@ namespace LargeObjectHeap
         /// smallobject : size84987 gen0
         /// LOH強制圧縮指定なしのGC後の使用メモリ:9908
         /// LOH強制圧縮指定ありのGCの使用メモリ:9924
-        /// 指定なしでも圧縮する条件があるようです
         ///
         /// ■64bit Output
         /// 64bit Process
@@ -41,11 +40,11 @@ namespace LargeObjectHeap
         /// smallobject : size84975 gen0
         /// LOH強制圧縮指定なしのGC後の使用メモリ:14536
         /// LOH強制圧縮指定ありのGCの使用メモリ:14512
-        /// 指定なしでも圧縮する条件があるようです
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
         {
+            GC.Collect();
             long memory_offset = GC.GetTotalMemory(true);
             // 32bitはオブジェクト管理(ヘッダーやメソッドテーブルポインタ等)で12バイト使ってる
             // 64bitはオブジェクト管理(ヘッダーやメソッドテーブルポインタ等)で24バイト使ってる
@@ -81,7 +80,6 @@ namespace LargeObjectHeap
             GCSettings.LargeObjectHeapCompactionMode = GCLargeObjectHeapCompactionMode.CompactOnce;
             GC.Collect();
             Console.WriteLine($"LOH強制圧縮指定ありのGCの使用メモリ:{GC.GetTotalMemory(true)- memory_offset}");
-            Console.WriteLine("指定なしでも圧縮する条件があるようです");
             Console.ReadLine();
         }
     }
