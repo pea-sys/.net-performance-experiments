@@ -81,7 +81,7 @@ namespace AvoidingValueTypeBoxing
             public int Y;
             public override bool Equals(object obj)
             {
-                if (!(obj is Point2D_NoneBoxing)) return false;
+                if (!(obj is Point2D_IEquatable)) return false;
                 Point2D_IEquatable other = (Point2D_IEquatable)obj;
                 return X == other.X && Y == other.Y;
             }
