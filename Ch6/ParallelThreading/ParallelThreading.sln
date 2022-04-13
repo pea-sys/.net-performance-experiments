@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelThreading", "ParallelThreading\ParallelThreading.csproj", "{FC128EB2-D77D-4C4F-9377-E47AA0424BBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC128EB2-D77D-4C4F-9377-E47AA0424BBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC128EB2-D77D-4C4F-9377-E47AA0424BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC128EB2-D77D-4C4F-9377-E47AA0424BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC128EB2-D77D-4C4F-9377-E47AA0424BBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F00C80C-8E0C-403E-ACCC-1D4CB3B18896}
+	EndGlobalSection
+EndGlobal
