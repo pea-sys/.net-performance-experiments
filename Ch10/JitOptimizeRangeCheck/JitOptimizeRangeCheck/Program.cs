@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,19 +9,40 @@ namespace JitOptimizeRangeCheck
 {
     internal class Program
     {
+        // Ngen実験
+        //https://docs.microsoft.com/ja-jp/windows/msix/desktop/desktop-to-uwp-r2r
+
+        //[Ngenなし]
+        //38
+        //61
+        //36
+        //38
+        //33
+        //33
+        //[Ngenあり]
+        //302
+        //168
+        //230
+        //265
+        //167
+        //268
         static void Main(string[] args)
         {
+            Stopwatch sw = new Stopwatch();
+            sw.Restart();
             uint[] array = new uint[100];
             // No1. 範囲チェックなし
-            //for (int k = 0; k < array.Length; ++k)
-            //{
-            //    array[k] = (uint)k;
-            //}
+            for (int k = 0; k < array.Length; ++k)
+            {
+                array[k] = (uint)k;
+            }
             // No2 範囲チェックあり
             for (int k = 0; k < array.Length / 2; k++)
             {
                 array[k * 2] = (uint)k;
             }
+            Console.WriteLine(sw.ElapsedTicks);
+            Console.ReadLine();
         }
         //No1. ■範囲チェックなし
         //026C0848 push        ebp  
