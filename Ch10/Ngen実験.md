@@ -27,7 +27,9 @@ NuGet の操作の実行に 1.01 sec かかりました
 ```
 
 3. リリースモードでビルドします。
-   ビルド成功時に「Native image ~ generated successfully.」と出ていたら、ネイティブイメージが作られています。
+   ビルド成功時に  
+   「Native image ~ generated successfully.」  
+   と出ていたら、ネイティブイメージが作られています。
 
 ```
 1>------ ビルド開始: プロジェクト: JitOptimizeRangeCheck, 構成1>  Native image obj\x64\Release\\R2R\JitOptimizeRangeCheck.exe generated successfully.
@@ -35,16 +37,18 @@ NuGet の操作の実行に 1.01 sec かかりました
 ```
 
 4. ネイティブイメージの格納場所を確認します。
+   私の場合は以下に作成されていました。
    「C:\Windows\assembly\NativeImages_v4.0.30319_32\JitOptimize9c961b92#」
 
 5. 試しにとてもシンプルなプログラムで Ngen の有無で各 5 回起動時間を測定しました。  
-   Ngen 有 = 平均約 40msec 　[Ngen あり] = 平均約 250mse
+   [Ngen 無] = 平均約 40msec  
+   [Ngen 有] = 平均約 250mse
 
    JIT コンパイルでパフォーマンスが遅くなるようなプログラムではないので  
    ネイティブイメージキャッシュ見に行く分のオーバーヘッドが加わってるような気がします。
 
 6. 一応、WinDbg で中身を見てみました。
-   Ngen アリの場合、PreJIT モードで動作していることが確認できました。
+   ネイティブイメージ有の場合、PreJIT モードで動作していることが確認できました。
 
 [Ngen あり]
 
