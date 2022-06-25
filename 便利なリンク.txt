@@ -2,3 +2,5 @@
 https://sharplab.io/
 [ILとか個人的にまとめているサイト]
 http://www.atelier-blue.com/
+[ASP.NETCoreのメモリ管理とパターン]
+https://github.com/sebastienros/memoryleak
