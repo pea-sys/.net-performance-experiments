@@ -68,7 +68,7 @@ namespace EventCalledByNullConditionalOperator
             {
                 if (_source.Updated != null)
                 {
-                    _source.Updated = null; //疑似的に割込み処理でイベントハンドラがデタッチされたものとすう
+                    _source.Updated = null; //疑似的に割込み処理でイベントハンドラがデタッチされたものとする
                     _source.RaiseUpdates();
                 }
                 else

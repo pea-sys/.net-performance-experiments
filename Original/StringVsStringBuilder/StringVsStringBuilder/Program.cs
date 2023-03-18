@@ -31,20 +31,24 @@ namespace StringVsStringBuilder
         public void @StringBuilder()
         {
             StringBuilder sb = new StringBuilder();
+            string ss = "";
             for (int i = 0; i < N; i++)
             {
                 sb.Append(s);
             }
+            ss = sb.ToString();
         }
 
         [Benchmark]
         public void StringBuilderEx()
         {
             StringBuilder sb = new StringBuilder();
+            string ss = "";
             for (int i = 0; i < N / 2; i++)
             {
                 sb.Append(s + 2);
             }
+            ss = sb.ToString();
         }
     }
 
