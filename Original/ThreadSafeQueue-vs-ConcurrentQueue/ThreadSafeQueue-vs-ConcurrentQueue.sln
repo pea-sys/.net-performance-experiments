@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.33403.129
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadSafeQueue-vs-ConcurrentQueue", "ThreadSafeQueue-vs-ConcurrentQueue\ThreadSafeQueue-vs-ConcurrentQueue.csproj", "{1353B9C4-1A92-4D92-89F6-C023A48FBD58}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1353B9C4-1A92-4D92-89F6-C023A48FBD58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1353B9C4-1A92-4D92-89F6-C023A48FBD58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1353B9C4-1A92-4D92-89F6-C023A48FBD58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1353B9C4-1A92-4D92-89F6-C023A48FBD58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B32BAA8-15EA-4212-8EA3-FBF262036A1D}
+	EndGlobalSection
+EndGlobal
