@@ -1,6 +1,12 @@
-﻿namespace ch2
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ch2.Listing2
 {
-    public class Store
+    public class Store : IStore
     {
         private readonly Dictionary<Product, int> _inventory = new Dictionary<Product, int>();
 
@@ -37,5 +43,4 @@
             return productExists ? remaining : 0;
         }
     }
-
 }

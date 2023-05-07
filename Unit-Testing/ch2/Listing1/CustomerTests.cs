@@ -1,5 +1,4 @@
-
-namespace ch2_Test
+namespace ch2.Listing1
 {
     public class CustomerTests
     {
