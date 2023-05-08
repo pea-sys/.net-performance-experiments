@@ -1,6 +1,9 @@
 ﻿
 namespace ch2.Listing2
 {
+    /// <summary>
+    /// ロンドン学派
+    /// </summary>
     public class CustomerTests
     {
         [Fact]

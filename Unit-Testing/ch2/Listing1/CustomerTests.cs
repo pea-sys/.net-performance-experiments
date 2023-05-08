@@ -1,5 +1,8 @@
 namespace ch2.Listing1
 {
+    /// <summary>
+    /// ŒÃ“TŠw”h
+    /// </summary>
     public class CustomerTests
     {
         [Fact]
