@@ -4,3 +4,5 @@ https://sharplab.io/
 http://www.atelier-blue.com/
 [ASP.NETCoreのメモリ管理とパターン]
 https://github.com/sebastienros/memoryleak
+[【C#】C# の async/await は実際にどうやって動いているか。]  
+https://blog.neno.dev/entry/2023/05/27/152855
