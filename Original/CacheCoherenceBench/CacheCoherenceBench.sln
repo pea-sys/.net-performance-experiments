@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheCoherenceBench", "CacheCoherenceBench\CacheCoherenceBench.csproj", "{B24F7836-0F22-440F-8313-53B37DC872F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B24F7836-0F22-440F-8313-53B37DC872F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B24F7836-0F22-440F-8313-53B37DC872F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B24F7836-0F22-440F-8313-53B37DC872F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B24F7836-0F22-440F-8313-53B37DC872F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A628AC54-F6F3-4DEB-ADD0-7C75E654C828}
+	EndGlobalSection
+EndGlobal
