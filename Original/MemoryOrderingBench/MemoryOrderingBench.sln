@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryOrderingBench", "MemoryOrderingBench\MemoryOrderingBench.csproj", "{FF8A2C3A-C9D5-4EA9-BD72-D7214625E8BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF8A2C3A-C9D5-4EA9-BD72-D7214625E8BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF8A2C3A-C9D5-4EA9-BD72-D7214625E8BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF8A2C3A-C9D5-4EA9-BD72-D7214625E8BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF8A2C3A-C9D5-4EA9-BD72-D7214625E8BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B23CF060-D06D-45CB-9769-17CBDC825CE0}
+	EndGlobalSection
+EndGlobal
